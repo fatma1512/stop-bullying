@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>لعبة من المتنمر؟</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>لعبة من المتنمر؟</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">الرئيسية</a></li>
+        <li><a href="about.html">ما هو التنمر؟</a></li>
+        <li><a href="game.html">ألعاب</a></li>
+        </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="game">
+      <img id="question-image" src="" alt="صورة السؤال" style="width: 250px; height: auto; margin-bottom: 20px;" />
+      <h2 id="question">جاري التحميل...</h2>
+      <p>هل هذا التصرف:</p>
+      <button onclick="checkAnswer(true)">سلوك متنمر</button>
+      <button onclick="checkAnswer(false)">سلوك جيد</button>
+      <p id="result"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>حقوق النشر &copy; 2025 - كلنا أصدقاء!</p>
+  </footer>
+
+  <script>
+    const questions = [
+      {
+        text: "طفل يسخر من زميله لأنه لونه مختلف.",
+        image: "images/q1.jpg",
+        answer: true
+      },
+      {
+        text: "طفل يساعد زميله اللي وقع في الفسحة.",
+        image: "images/q2.jpg",
+        answer: false
+      },
+      {
+        text: "طفل يضحك على اسم زميله.",
+        image: "images/q3.jpg",
+        answer: true
+      },
+      {
+        text: "طفل يشارك لعبه مع أصدقاءه.",
+        image: "images/q4.jpg",
+        answer: false
+      }
+    ];
+
+    let current = 0;
+
+    function loadQuestion() {
+      const img = document.getElementById("question-image");
+      const questionText = document.getElementById("question");
+      const result = document.getElementById("result");
+
+      if (current < questions.length) {
+        const q = questions[current];
+        questionText.textContent = q.text;
+        img.src = q.image;
+        result.textContent = "";
+      } else {
+        questionText.textContent = "أحسنت! أنهيت اللعبة.";
+        img.style.display = "none";
+        document.querySelector("p").style.display = "none";
+        document.querySelectorAll("button").forEach(btn => btn.style.display = "none");
+      }
+    }
+
+    function checkAnswer(userAnswer) {
+      const correct = questions[current].answer;
+      const result = document.getElementById("result");
+
+      if (userAnswer === correct) {
+        result.textContent = "إجابة صحيحة!";
+        result.style.color = "green";
+      } else {
+        result.textContent = "إجابة خاطئة.";
+        result.style.color = "red";
+      }
+
+      current++;
+      setTimeout(loadQuestion, 1500);
+    }
+
+    window.onload = loadQuestion;
+  </script>
+</body>
+</html>

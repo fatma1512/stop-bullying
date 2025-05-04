@@ -1,0 +1,119 @@
+/* تعيين الخط العام واتجاه الصفحة */
+body {
+  direction: rtl;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  font-family: 'cairo', sans-serif;
+
+  /* خلفية ثابتة */
+  background-image: url('images/background.jpg'); /* ضع صورة معبرة عن التنمر */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+
+  /* لون احتياطي خلف الصورة */
+  background-color: #e0f7fa;
+  color: #333;
+}
+
+/* رأس الموقع */
+header {
+  background-color: #0288d1;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 4em;
+}
+
+/* شريط التنقل */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  background-color: #039be5;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #0277bd;
+}
+
+/* قسم البطل (Hero) */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: rgba(255, 255, 255, 0.8); /* خلفية شفافة للنص */
+  margin: 40px;
+  border-radius: 20px;
+}
+
+.hero h2 {
+  font-size: 4em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero a.start-button {
+  display: inline-block;
+  background-color: #0288d1;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 4em;
+  transition: background-color 0.3s;
+}
+
+.hero a.start-button:hover {
+  background-color: #01579b;
+}
+
+/* قسم "ما هو التنمر؟" */
+.info-section {
+  margin: 40px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9); /* خلفية شفافة للنص */
+  border-radius: 15px;
+}
+
+.info-section h2 {
+  font-size: 4em;
+  color: #0288d1;
+}
+
+.info-section p {
+  font-size: 3em;
+  color: #555;
+}
+
+/* تذييل الصفحة */
+footer {
+  background-color: #0288d1;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
